@@ -636,7 +636,7 @@ const usePlayCard = () => {
   useEffect(() => {
     if(ApiCards.length > 3) setCards(refresh(ApiCards));
     // setStatus({...status, win: null, loss: null})
-  }, [status.level])
+  }, [status.level, status.win, status.loss])
 
   const shuffoldCards = () => { 
     for (let i = cards.length - 1; i > 0; i--) { 

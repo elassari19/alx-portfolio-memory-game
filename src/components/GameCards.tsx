@@ -4,6 +4,7 @@ import Image from 'next/image'
 import backCard from '@public/backcard.png'
 import { delay, rotateCard } from '../helper/functions'
 import { Card } from '../hooks/usePlayCard'
+import GameResult from './GameResult'
 
 interface Props {
   cards: Card[],
@@ -48,28 +49,16 @@ const GameCards = ({ cards, setCards, setStatus, status, shuffoldCards }: Props)
     setCards(card)
   }
 
-  if(status.win != true) {
+  if(status.win != true || status.loss != true) {
     delay(1500).then(() => {
       shuffoldCards()
     })
   }
   console.log(status)
 
-  if(status.win) {
+  if(status.win || status.loss) {
     return (
-      <div className='w-full h-full flex flex-col gap-8 justify-center items-center'>
-        <div
-          className='text-3xl font-bold cursor-pointer'
-        >
-          win go to next level
-        </div>
-        <button
-        className="block w-60 font-bold rounded-md bg-[#7533cf]/90 hover:bg-[#7533cf] p-4"
-        onClick={() => setStatus({ ...status, win: false })}
-        >
-        Start The Next Level
-      </button>
-      </div>
+      <GameResult result={status.win ? true: status.loss ? false : null } onClick={() => setStatus({ ...status, win: false, loss: false })} />
     )
   }
   

@@ -1,13 +1,16 @@
 "use client"
 
-import React, { useState } from 'react'
+import React from 'react'
 
 interface Props {
-  setOnboarding: React.Dispatch<React.SetStateAction<boolean>>;
+  setOnboarding: React.Dispatch<React.SetStateAction<any>>;
+  onboarding: {
+    username: string,
+    onboarding: boolean
+  };
 }
 
-const WelcomActions = ({ setOnboarding }: Props) => {
-  const [username, setUsername] = useState("")
+const WelcomActions = ({ onboarding, setOnboarding }: Props) => {
 
   return (
     <>
@@ -19,10 +22,7 @@ const WelcomActions = ({ setOnboarding }: Props) => {
       <button
         className="w-60 font-bold rounded-md bg-[#7533cf]/90 hover:bg-[#7533cf] p-4"
         onClick={
-          () => {
-            setUsername("Guest"),
-            setOnboarding(false)
-          }
+          () =>  setOnboarding({ ...onboarding, username: "guest", onboarding: false})
         }
       >
         Guest
@@ -31,13 +31,13 @@ const WelcomActions = ({ setOnboarding }: Props) => {
         <input
           placeholder="Type Username"
           className="border-[#7533cf] border-2 rounded-md outline-none p-4 py-2 bg-[#7533cf70] placeholder:text-yellow-500/80 font-bold"
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}
+          onChange={(e) => setOnboarding({ ...onboarding, username: e.target.value})}
+          value={onboarding.username}
         />
         <button
           className="w-60 font-bold rounded-md bg-[#7533cf]/90 hover:bg-[#7533cf] p-4"
-          disabled={username.length < 3}
-          onClick={() => setOnboarding(false)}
+          disabled={onboarding.username.length < 3}
+          onClick={() => setOnboarding({ ...onboarding, onboarding: false})}
         >
           Submit
         </button>
