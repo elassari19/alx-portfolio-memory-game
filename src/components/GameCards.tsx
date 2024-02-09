@@ -88,7 +88,7 @@ const GameCards = ({ cards, setCards, setStatus, status, shuffoldCards }: Props)
               </div>
               <div className="absolute w-full h-full backface-hidden rotate-y-180">
                 <div className="absolute w-full h-full flex justify-center items-center px-4">
-                  <p className='font-bold text-sm z-40'>Don't Touche Me Again</p>
+                  <p className='font-bold text-sm z-40'>Don&lsquo;t Touche Me Again</p>
                 </div>
                 <Image src={backCard} alt="backcard" width={100} height={100} className=' absolute w-full h-full rounded-lg' />
               </div>
