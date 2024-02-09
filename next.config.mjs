@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  distDir: 'build',
   images: {
     domains: ['i.pinimg.com', 'wallpapercave.com', 'wallpapers.com'],
   },
