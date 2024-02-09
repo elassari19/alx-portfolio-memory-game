@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} h-svh overflow-hidden`}>
-        <Image src={back} alt="background image" width="1000" height="1000" className="w-full h-full absolute top-0 left-0 -z-10" />
+        <Image src={back} alt="background image" width="1000" height="1000" className="w-full h-full bg-cover absolute top-0 left-0 -z-10" />
         {children}
       </body>
     </html>
