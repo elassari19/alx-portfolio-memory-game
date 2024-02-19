@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import back from "../../public/back.jpeg";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} h-svh overflow-hidden`}>
-        <Image src={back} alt="background image" width="1000" height="1000" className="w-full h-full bg-cover absolute top-0 left-0 -z-10" />
+      <body className={`${inter.className} h-[100vh] overflow-hidden`}>
+        <div className="flex gap-4 p-2">
+          <Link className="opacity-80 hover:opacity-100" href="/">Home</Link>
+          <Link className="opacity-80 hover:opacity-100" href="/game">Play</Link>
+          <Link className="opacity-80 hover:opacity-100" href="/about-us">About us</Link>
+        </div>
         {children}
       </body>
     </html>
