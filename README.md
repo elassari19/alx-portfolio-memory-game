@@ -2,7 +2,8 @@
 
 The memory game is lightweight game give the ability to play and train your mind
 
-![alt text](http://url/to/img.png)
+![Onboarding page](https://github.com/elassari19/alx-portfolio-memory-game/blob/main/public/first.png)
+![Game page](https://github.com/elassari19/alx-portfolio-memory-game/blob/main/public/second.png)
 
 #### Preview:
 [app preview](https://alx-portfolio-memory-game.vercel.app/) with your browser to see the result.
@@ -47,7 +48,7 @@ You can check out [to contribute](https://github.com/elassari19/alx-portfolio-me
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 ### Licensing
-the project has MIT licensing which mean you use the project free
+MIT
 
 ## Story
 All people love to play games we do too, and there are a lot of people looking for a way to develop their memory, for that, we decided to create a game that helps people train their minds and enjoy playing this game at the same time
